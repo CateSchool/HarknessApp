@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CC5D1F1226BB93000E3C333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D1F0226BB93000E3C333 /* AppDelegate.swift */; };
+		4CC5D1F3226BB93000E3C333 /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D1F2226BB93000E3C333 /* SectionsViewController.swift */; };
+		4CC5D1F6226BB93000E3C333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5D1F4226BB93000E3C333 /* Main.storyboard */; };
+		4CC5D1F9226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D1F7226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodeld */; };
+		4CC5D1FB226BB93200E3C333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5D1FA226BB93200E3C333 /* Assets.xcassets */; };
+		4CC5D1FE226BB93200E3C333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5D1FC226BB93200E3C333 /* LaunchScreen.storyboard */; };
+		4CC5D206226BBA9800E3C333 /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D205226BBA9800E3C333 /* DiscussionViewController.swift */; };
+		4CC5D208226BBADD00E3C333 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D207226BBADD00E3C333 /* PersistenceService.swift */; };
+		4CC5D20E226BBB7300E3C333 /* notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D20D226BBB7300E3C333 /* notes.swift */; };
+		4CC5D214226C4C6D00E3C333 /* ClassSection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D212226C4C6D00E3C333 /* ClassSection+CoreDataClass.swift */; };
+		4CC5D215226C4C6D00E3C333 /* ClassSection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5D213226C4C6D00E3C333 /* ClassSection+CoreDataProperties.swift */; };
+		4CDD094722722C1600EE7DBA /* DiscussionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD094622722C1600EE7DBA /* DiscussionModel.swift */; };
+		4CDD09492276A9E900EE7DBA /* PrettyDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD09482276A9E900EE7DBA /* PrettyDisplay.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CC5D1ED226BB93000E3C333 /* Cate School Harkness Discussion Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cate School Harkness Discussion Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC5D1F0226BB93000E3C333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CC5D1F2226BB93000E3C333 /* SectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
+		4CC5D1F5226BB93000E3C333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CC5D1F8226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cate_School_Harkness_Discussion_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		4CC5D1FA226BB93200E3C333 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CC5D1FD226BB93200E3C333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CC5D1FF226BB93200E3C333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CC5D205226BBA9800E3C333 /* DiscussionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
+		4CC5D207226BBADD00E3C333 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		4CC5D20D226BBB7300E3C333 /* notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notes.swift; sourceTree = "<group>"; };
+		4CC5D212226C4C6D00E3C333 /* ClassSection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassSection+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4CC5D213226C4C6D00E3C333 /* ClassSection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassSection+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4CDD094622722C1600EE7DBA /* DiscussionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionModel.swift; sourceTree = "<group>"; };
+		4CDD09482276A9E900EE7DBA /* PrettyDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyDisplay.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CC5D1EA226BB93000E3C333 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CC5D1E4226BB92F00E3C333 = {
+			isa = PBXGroup;
+			children = (
+				4CC5D1EF226BB93000E3C333 /* Cate School Harkness Discussion Tracker */,
+				4CC5D1EE226BB93000E3C333 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CC5D1EE226BB93000E3C333 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5D1ED226BB93000E3C333 /* Cate School Harkness Discussion Tracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CC5D1EF226BB93000E3C333 /* Cate School Harkness Discussion Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5D210226C47F900E3C333 /* Model */,
+				4CC5D211226C483300E3C333 /* View */,
+				4CC5D20F226C47D700E3C333 /* Controller */,
+				4CC5D20D226BBB7300E3C333 /* notes.swift */,
+				4CC5D1FA226BB93200E3C333 /* Assets.xcassets */,
+				4CC5D1FC226BB93200E3C333 /* LaunchScreen.storyboard */,
+				4CC5D1FF226BB93200E3C333 /* Info.plist */,
+			);
+			path = "Cate School Harkness Discussion Tracker";
+			sourceTree = "<group>";
+		};
+		4CC5D20F226C47D700E3C333 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5D1F0226BB93000E3C333 /* AppDelegate.swift */,
+				4CC5D207226BBADD00E3C333 /* PersistenceService.swift */,
+				4CDD09482276A9E900EE7DBA /* PrettyDisplay.swift */,
+				4CC5D1F2226BB93000E3C333 /* SectionsViewController.swift */,
+				4CC5D205226BBA9800E3C333 /* DiscussionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CC5D210226C47F900E3C333 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5D212226C4C6D00E3C333 /* ClassSection+CoreDataClass.swift */,
+				4CC5D213226C4C6D00E3C333 /* ClassSection+CoreDataProperties.swift */,
+				4CC5D1F7226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodeld */,
+				4CDD094622722C1600EE7DBA /* DiscussionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CC5D211226C483300E3C333 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5D1F4226BB93000E3C333 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CC5D1EC226BB93000E3C333 /* Cate School Harkness Discussion Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CC5D202226BB93200E3C333 /* Build configuration list for PBXNativeTarget "Cate School Harkness Discussion Tracker" */;
+			buildPhases = (
+				4CC5D1E9226BB93000E3C333 /* Sources */,
+				4CC5D1EA226BB93000E3C333 /* Frameworks */,
+				4CC5D1EB226BB93000E3C333 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cate School Harkness Discussion Tracker";
+			productName = "Cate School Harkness Discussion Tracker";
+			productReference = 4CC5D1ED226BB93000E3C333 /* Cate School Harkness Discussion Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CC5D1E5226BB92F00E3C333 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = cate;
+				TargetAttributes = {
+					4CC5D1EC226BB93000E3C333 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 4CC5D1E8226BB92F00E3C333 /* Build configuration list for PBXProject "Cate School Harkness Discussion Tracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CC5D1E4226BB92F00E3C333;
+			productRefGroup = 4CC5D1EE226BB93000E3C333 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CC5D1EC226BB93000E3C333 /* Cate School Harkness Discussion Tracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CC5D1EB226BB93000E3C333 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC5D1FE226BB93200E3C333 /* LaunchScreen.storyboard in Resources */,
+				4CC5D1FB226BB93200E3C333 /* Assets.xcassets in Resources */,
+				4CC5D1F6226BB93000E3C333 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CC5D1E9226BB93000E3C333 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC5D208226BBADD00E3C333 /* PersistenceService.swift in Sources */,
+				4CC5D206226BBA9800E3C333 /* DiscussionViewController.swift in Sources */,
+				4CDD09492276A9E900EE7DBA /* PrettyDisplay.swift in Sources */,
+				4CDD094722722C1600EE7DBA /* DiscussionModel.swift in Sources */,
+				4CC5D1F3226BB93000E3C333 /* SectionsViewController.swift in Sources */,
+				4CC5D214226C4C6D00E3C333 /* ClassSection+CoreDataClass.swift in Sources */,
+				4CC5D1F9226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodeld in Sources */,
+				4CC5D1F1226BB93000E3C333 /* AppDelegate.swift in Sources */,
+				4CC5D215226C4C6D00E3C333 /* ClassSection+CoreDataProperties.swift in Sources */,
+				4CC5D20E226BBB7300E3C333 /* notes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CC5D1F4226BB93000E3C333 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC5D1F5226BB93000E3C333 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CC5D1FC226BB93200E3C333 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC5D1FD226BB93200E3C333 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CC5D200226BB93200E3C333 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CC5D201226BB93200E3C333 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CC5D203226BB93200E3C333 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N582TJ9X3R;
+				INFOPLIST_FILE = "Cate School Harkness Discussion Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cate.cs.estherwhang.Harkness.Cate-School-Harkness-Discussion-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4CC5D204226BB93200E3C333 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N582TJ9X3R;
+				INFOPLIST_FILE = "Cate School Harkness Discussion Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cate.cs.estherwhang.Harkness.Cate-School-Harkness-Discussion-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CC5D1E8226BB92F00E3C333 /* Build configuration list for PBXProject "Cate School Harkness Discussion Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC5D200226BB93200E3C333 /* Debug */,
+				4CC5D201226BB93200E3C333 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CC5D202226BB93200E3C333 /* Build configuration list for PBXNativeTarget "Cate School Harkness Discussion Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC5D203226BB93200E3C333 /* Debug */,
+				4CC5D204226BB93200E3C333 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4CC5D1F7226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4CC5D1F8226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodel */,
+			);
+			currentVersion = 4CC5D1F8226BB93000E3C333 /* Cate_School_Harkness_Discussion_Tracker.xcdatamodel */;
+			path = Cate_School_Harkness_Discussion_Tracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4CC5D1E5226BB92F00E3C333 /* Project object */;
+}
