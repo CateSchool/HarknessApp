@@ -8,10 +8,10 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
 
-
-class DiscussionViewController: UIViewController {
+class DiscussionViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     let discussionTracker = DiscussionTracker()
     let prettyDisplayStuff = PrettyDisplayStuff()
@@ -61,16 +61,6 @@ class DiscussionViewController: UIViewController {
         }
     }
 
-/*
-     To do:
-     get the button positions
-     Figure out if you want the student names on the labels or not
-     okay here's how I want it: Student name on the label, save on the transcript as its tag number
-     get it so that the start button changes to done
-     
-     clean up the hiding thing, make sure the buttons are hiding stuff and buttons and transcripts
-     
- */
     
     
     @IBOutlet weak var endDiscussionPrompt: UIView!
@@ -218,8 +208,32 @@ class DiscussionViewController: UIViewController {
         returnHomePrompt.isHidden = true
         finalPageOutlet.isHidden = true
     }
+    
+    func configureMailController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setMessageBody(finalTranscriptTextView.text!, isHTML: false)
+        return mailComposerVC
+    }
+
+    
+    func showMailError() {
+        let sendMailErrorAlert = UIAlertController(title: "Could not send email", message: "Your device could not send email", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        sendMailErrorAlert.addAction(dismiss)
+        self.present(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
     @IBAction func emailButton(_ sender: UIButton) {
-        print("email")
+        let mailComposeViewController = configureMailController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            showMailError()
+        }
     }
     
     
