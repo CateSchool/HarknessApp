@@ -339,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N582TJ9X3R;
+				DEVELOPMENT_TEAM = 2N3QRXZ556;
 				INFOPLIST_FILE = "Cate School Harkness Discussion Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,7 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N582TJ9X3R;
+				DEVELOPMENT_TEAM = 2N3QRXZ556;
 				INFOPLIST_FILE = "Cate School Harkness Discussion Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

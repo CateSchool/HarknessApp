@@ -25,16 +25,26 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTapGesture()
+        self.activeField = UITextField()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         ClassSizePicker.delegate = self
         ClassSizePicker.dataSource = self
         AlreadyMadeGroups.delegate = self
         AlreadyMadeGroups.dataSource = self
+        
+        //keyboard stuff
         configureTextFields()
-        configureTapGesture()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+
         let fetchRequest: NSFetchRequest<ClassSection> = ClassSection.fetchRequest()
         
         do {
@@ -48,9 +58,13 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
         
         print("Viewdidload: \(classSections)")
         print("Viewdidload: \(classSections.count)")
-        
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 
     //PROBLEM: HOW TO GET RID OF THE CLICKING SOUND?
     
@@ -126,20 +140,43 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
     }
     
     //TEXTFIELD STUFF
+    var activeField : UITextField?
     private func configureTextFields(){
         for item in studentNameTextField{
             item.delegate = self
         }
     }
+    
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SectionsViewController.handleTap))
         view.addGestureRecognizer(tapGesture)
     }
     @objc func handleTap() {
-        view.endEditing(true )
+        view.endEditing(true )  //this leads to the extension below
     }
     
+   ///all the fancy scroll view stuff is this https://www.youtube.com/watch?v=25lXM5G0iVY&app=desktop
     
+    @objc func keyboardWillShow(notification: Notification) {
+        guard let keyboardInfo = notification.userInfo else { return }
+        if let keyboardSize = (keyboardInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size {
+            let keyboardHeight = keyboardSize.height
+            let contentsInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+            self.scrollView.contentInset = contentsInsets
+            var viewRect = self.view.frame
+            viewRect.size.height -= keyboardHeight + 10 //keep plus ten or no?
+            guard let activeField = self.activeField else {return}
+            if (!viewRect.contains(activeField.frame.origin)) {
+                let scrollPoint = CGPoint(x:0, y:activeField.frame.origin.y - keyboardHeight)
+                self.scrollView.setContentOffset(scrollPoint, animated: true)
+            }
+        }
+        
+    }
+    @objc func keyboardWillHide(notification: Notification) {
+        let contentsInset = UIEdgeInsets.zero
+        self.scrollView.contentInset = contentsInset
+    }
     //All Outlets
     //the first thing you ssee
     @IBOutlet weak var Return: UIButton!
@@ -165,6 +202,9 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
     @IBOutlet weak var StartDiscussion: UIButton!
     
     @IBOutlet weak var EditDelete: UIButton!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     var throwAwayForAddOrEdit = 0
     
@@ -311,6 +351,7 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
         
         Save.isHidden = true
         Delete.isHidden = true
+        scrollView.isHidden = true
         
     }
     
@@ -326,6 +367,7 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
         ClassSizePicker.isHidden = false
         GoButton.isHidden = false
         Save.isHidden = false
+        scrollView.isHidden = false
     }
     
     func clearTextFields(numberOfTextFields: Int) {
@@ -361,8 +403,11 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
 
 extension SectionsViewController: UITextFieldDelegate  {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.activeField = nil
         textField.resignFirstResponder()
+        self.activeField = nil
         return true
     }
+    
     
 }

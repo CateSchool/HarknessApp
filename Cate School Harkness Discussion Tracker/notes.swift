@@ -22,12 +22,15 @@
  
  
  todo
-    add the keyboard
     FIX CONSTRAINTS
  
- Features to add
+ Cool Features to add
     Delete/undo for the transcript
-    Figure out the bold stuff, on a copy of this file so you don't break anything
+    Figure out how to bold names, on a copy of this file so you don't break anything
+ 
+ 
+ fix that extra space when adding class
+ 
  
  
  */
