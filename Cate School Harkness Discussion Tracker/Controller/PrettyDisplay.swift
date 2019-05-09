@@ -6,10 +6,12 @@
 //  Copyright © 2019 cate. All rights reserved.
 //
 
+//This takes care of how the time is displayed on the transcript, the viewController was getting messy so I put this in a separate class
 import Foundation
 import UIKit
 
 class PrettyDisplayStuff {
+    //I was throwing around the idea of bolding student names, decided against it but could be an interesting addition to the project
 //    func addBoldText(normalText: String, boldText : String) -> NSAttributedString {
 //       
 //        //https://stackoverflow.com/questions/28496093/making-text-bold-using-attributed-string-in-swift/37992022

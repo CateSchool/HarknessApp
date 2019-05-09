@@ -6,6 +6,7 @@
 //  Copyright © 2019 cate. All rights reserved.
 //
 
+
 import UIKit
 import CoreData
 import MessageUI
@@ -15,7 +16,7 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
     
     let discussionTracker = DiscussionTracker()
     let prettyDisplayStuff = PrettyDisplayStuff()
-    //NOTES: ONLY WAY TO MOVE TO THE PREVIOUS PAGE IS TO TRIGGER THAT PROMPT
+    //NOTES: ONLY WAY TO MOVE TO THE PREVIOUS PAGE IS TO TRIGGER THAT PROMPT that asks if you want to go to the previous page
 
     var chosenClassSection : ClassSection?
     
@@ -38,25 +39,26 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
         studentLabels = studentLabels.sorted(by: { $0.tag < $1.tag})
         studentButtonOutletCollection = studentButtonOutletCollection.sorted(by: { $0.tag < $1.tag})
         
-        //this wastes time, simplify it
+        //first hides alllll the student buttons to ensure a blank canvas
         for item in studentViews {
             item.isHidden = true
         }
         
-        //sort the views
+        //show the student buttons for that class (just the number of students for the class selected)
         for i in 1 ... students.count {
+            //show the student buttons for that class (just the number of students for the class selected)
             studentViews[i-1].isHidden = false
+            
+            //this ensures that you can't start the discussion without pressing the start button, as nothing will work until you press that STARTDONE BUTTON
             studentButtonOutletCollection[i-1].isEnabled = false
             
-            
-            //make sure that there is a reset later that hides everything
-            
-            //renames the labels with First Names
+            //renames the labels of the buttons with First Names of the students
                 var fullName = students[i-1].components(separatedBy: " ")
                 studentLabels[i-1].text = fullName[0]
             
         }
         for item in discussionCommentOutletCollection {
+            //this ensures that you can't start the discussion without pressing the start button, as nothing will work until you press that STARTDONE BUTTON
             item.isEnabled = false
         }
     }
@@ -73,37 +75,31 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
     
     @IBOutlet weak var finalTranscriptTextView: UITextView!
     
-    
-//make sure these are hidden later
-    
 //outlet collection for the views
-    
     @IBOutlet var studentViews: [UIView]!
     
 //outlet collection for the labels
-    
     @IBOutlet var studentLabels: [UILabel]!
     
 //outlet collection for the buttons (I literally just need it to enable/disable the button when transcript isn't happening)
-    
     @IBOutlet var studentButtonOutletCollection: [UIButton]!
     
     
 //all the buttons
     @IBAction func studentButtons(_ sender: UIButton) {
-        //use sender.tag for this
+        //basically it takes the tag of the button to establish which student is talking
+        //this ensures that you get the number of the student and not their name, which is what Miss Fortner requested
         currentTime = abs(starttime.timeIntervalSinceNow)
         discussionTracker.discussionLog += prettyDisplayStuff.convertSecondsToReadableTime(timeInSeconds: currentTime) + " Student \(sender.tag) \n"
         liveTranscript.text = discussionTracker.discussionLog
-        //move to bottom of scroll
-        //move to bottom of scrolle
+        //this does an automatic scroll for the textview
+        //https://stackoverflow.com/questions/16698638/scroll-uitextview-to-bottom
         let range = NSMakeRange(liveTranscript.text.count - 1, 1)
         liveTranscript.scrollRangeToVisible(range)
     }
     
 //discussion comments
     //discussion views
-    
     @IBOutlet var discussionCommentViews: [UIView]!
     
     //discussion comment label outlet collection
@@ -116,7 +112,7 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
     
     //discussion action buttons
     @IBAction func discussionCommentButtons(_ sender: UIButton) {
-        //sort the labels and views
+        //sorts the labels and views
         currentTime = abs(starttime.timeIntervalSinceNow)
         discussionCommentLabels = discussionCommentLabels.sorted(by: { $0.tag < $1.tag})
         discussionTracker.discussionLog += prettyDisplayStuff.convertSecondsToReadableTime(timeInSeconds: currentTime) + " Contribution: \(discussionCommentLabels[sender.tag - 1].text!)\n"
@@ -130,7 +126,7 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
     
     @IBAction func startDoneButton(_ sender: UIButton) {
         currentTime = abs(starttime.timeIntervalSinceNow)
-        //move to bottom of scrolle
+        //move to bottom of scroll
         let range = NSMakeRange(liveTranscript.text.count - 1, 1)
         liveTranscript.scrollRangeToVisible(range)
         
@@ -144,7 +140,7 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
             
         }
         else {
-            //start the timer, fix the timer thing
+            //start the discussion and timer
             currentTime = 0
             startDoneButton.setTitle("DONE", for: .normal)
             discussionTracker.discussionLog += "\(className)\n"
@@ -160,8 +156,6 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
             }
         }
         
-        //
-        
     }
     
     //end discussion prompt leads you to the final page, where you can chose to email or send, then once you hit the home button it will warn you that it cannot save
@@ -170,7 +164,6 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
     @IBAction func returnButton(_ sender: UIButton) {
         returnHomePrompt.isHidden = false
     }
-    
     
     
     @IBAction func endDiscussionYes(_ sender: UIButton) {
@@ -196,7 +189,7 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
     }
     
     @IBAction func returnHomeYes(_ sender: UIButton) {
-        //THE ONLY WAY TO GET OUT OF HERE
+        //THE ONLY WAY TO GET OUT OF THIS VIEWCONTROLLER
         returnHomePrompt.isHidden = false
         liveTranscript.text = ""
         finalTranscriptTextView.text = ""
@@ -208,6 +201,9 @@ class DiscussionViewController: UIViewController, MFMailComposeViewControllerDel
         returnHomePrompt.isHidden = true
         finalPageOutlet.isHidden = true
     }
+    
+    
+    //MAIL STUFF, CAROLINE DID THE STUFF BELOW
     
     func configureMailController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
