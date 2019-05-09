@@ -306,8 +306,6 @@ class SectionsViewController: UIViewController,UIPickerViewDataSource,UIPickerVi
         }
     }
 
-    
-    
     @IBAction func startDiscussionButton(_ sender: UIButton) {
         //SEGue to THE DISCUSSION BOARD
         //pass the chosen class from the picker view AHHHHHHHHHHH

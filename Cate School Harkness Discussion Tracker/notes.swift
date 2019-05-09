@@ -18,7 +18,7 @@
  GENERAL NOTES:
  
  The set up student input part is a mess of views and text inputs because it was the only way I knew to keep the interface in control, anyone who cares to undo that mess is welcome to do so
- It's also not very flexible for other ipads,
+    It's also not very flexible for other ipads, make the constraints less dependent on x and y positions
  
  
  todo
@@ -27,9 +27,11 @@
  Cool Features to add
     Delete/undo for the transcript
     Figure out how to bold names, on a copy of this file so you don't break anything
+    change the contribution buttons within the app, make it dependent on the class
  
  
- fix that extra space when adding class
+ 
+ fix that extra space when adding classes that the non-completely dismissed keyboard keeps
  
  
  
